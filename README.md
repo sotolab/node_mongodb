@@ -31,3 +31,14 @@ C:\MongoDB\Server\4.2\bin
 
 https://download.studio3t.com/robomongo/windows/robo3t-1.3.1-windows-x86_64-7419c406.exe
 
+[How to Run]
+
+cmd> git clone  https://github.com/sotolab/node_mongodb.git
+
+cmd> cd node_mongodb
+
+cmd> npm i
+
+cmd> npm start (node index.js)
+
+
