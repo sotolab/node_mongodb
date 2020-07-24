@@ -289,29 +289,3 @@ MongoClient.connect(
       });
   }
 );
-
-// let mongo = require("mongodb");
-// let MongoClient = require("mongodb").MongoClient;
-// let url = "mongodb://localhost/EmployeeDB";
-//
-// MongoClient.connect(
-//   "mongodb://localhost:27017",
-//   { useUnifiedTopology: true },
-//   function(err, db) {
-//     let cursor = db.collection("Employee").find();
-//
-//     cursor.each(function(err, doc) {
-//       console.log("cursor : ", doc);
-//     });
-//   }
-// );
-
-// function connectDB() {
-// 	var databaseUrl = 'mongodb://localhost:27017/local';
-//
-// 	MongoClient.connect(databaseUrl, function(err, db) {
-// 		if (err) throw err;
-// 		console.log('데이터베이스에 연결되었습니다. : ' + databaseUrl);
-// 		database = db;
-// 	});
-// }
