@@ -1,7 +1,15 @@
 # node_html
 node_html
 
-1 MongoDB
+1 mkdir c:\workspace
+
+2 cmder Windows 10
+
+https://github.com/cmderdev/cmder/releases/download/v1.3.15/cmder.zip
+
+unzip c:\workspace\cmder
+
+3 MongoDB
 
 https://fastdl.mongodb.org/win32/mongodb-win32-x86_64-2012plus-4.2.8-signed.msi
 
@@ -19,7 +27,7 @@ C:\MongoDB\Server\4.2\bin
 
 데몬 실행 cmder > mognod
 
-2 Robo mongo
+4 Robo mongo
 
 https://download.studio3t.com/robomongo/windows/robo3t-1.3.1-windows-x86_64-7419c406.exe
 
