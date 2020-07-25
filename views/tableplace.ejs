@@ -1,0 +1,21 @@
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <td><b>이름</b></td>
+        <td><b>주소</b></td>
+      </tr>
+    </thead>
+    <% if (emp_list.length) {%>
+    <tbody>
+      <% emp_list.forEach(item => { %>
+      <tr>
+        <td><%= item.name %></td>
+        <td><%= item.address %></td>
+      </tr>
+      <% }) %>
+    </tbody>
+    <% } %>
+    <tbody></tbody>
+  </table>
+</div>

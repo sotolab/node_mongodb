@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>대시보드</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <script>
+      $(document).ready(function() {
+        let interval;
+
+        function doAjax() {
+          $.ajax({
+            url: "http://localhost:3000/updatelist",
+            type: "get",
+            success: function(response) {
+              $("#place_for_tableplace").html(response);
+              interval = setTimeout(doAjax, 3000);
+            },
+            error: function(xhr) {
+              //Do Something to handle error
+            }
+          });
+        }
+
+        $("#start").on("click", function() {
+          console.log("start");
+          doAjax();
+        });
+
+        $("#stop").on("click", function() {
+          console.log("stop");
+          clearTimeout(interval);
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#navbar"
+            aria-expanded="false"
+            aria-controls="navbar"
+          ></button>
+          <a class="navbar-brand" href="/">Sunstar</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active">
+              <a href="/">Home </a>
+            </li>
+            <li class="deactive">
+              <a href="/showlist">Table </a>
+            </li>
+            <li class="deactive">
+              <a href="/graph">Chart </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <br />
+    <br />
+
+    <br />
+    <br />
+    <div class="container " role="main">
+      <h2><strong> 대시보드 </strong></h2>
+      <section id="viewHome">
+        몽고디비 대시보드입니다. 몽고디비 구축을 목적을 두고 있습니다.
+        <ul>
+          <li>데이터베이스 구축</li>
+          <li><b>누구나 </b> 자유롭게 교육을 받고</li>
+          <li><b>함께 </b> 개발의 즐거움을 느낄 수 있도록</li>
+          <li>
+            Gighub <b>https://github.com/sotoedu</b> SotoLAB:
+            <a
+              href="https://github.com/sotolab"
+              id="contractLink"
+              target="_blank"
+              >이동하기</a
+            >
+          </li>
+        </ul>
+      </section>
+    </div>
+    <br />
+    <br />
+    <div id="place_for_tableplace"></div>
+  </body>
+
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">
+        <b>Copyright &copy; Since 2015. Sunstar</b>
+      </p>
+    </div>
+  </footer>
+</html>
